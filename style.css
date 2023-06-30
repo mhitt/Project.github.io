@@ -1,0 +1,26 @@
+body {
+  background-color: black;
+  color: white;
+}
+.button {
+  padding: 5px;
+  border-color: blue;
+  width: 40%;
+  height: 75px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 25px;
+}
+#qMainDiv {
+  border: solid white 1px;
+}
+#qNumDiv{
+    height: 75px;
+    width: 90%;
+}
+#startImage{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+  </head>
+  <body>
+    <section id="gameSection">
+      <div id="qMainDiv">
+        <div id="qCont">
+          <div id="qNumDiv">
+            <span id="qNum"></span>
+            <div id="questionDiv">
+              <span id="questions" class="question"></span>
+            </div>
+          </div>
+
+          <div id="a">
+            <button
+              id="aButton"
+              title="click to select answer"
+              type="button"
+              class="button"
+            >
+              <span class="aButton"></span>
+            </button>
+          </div>
+          <div id="b">
+            <button title="click to select answer" type="button" class="button">
+              <span id="bButton" class="bButton" onclick="checkAnswer"></span>
+            </button>
+          </div>
+          <div id="c">
+            <button title="click to select answer" type="button" class="button">
+              <span id="cButton" class="cButton"></span>
+            </button>
+          </div>
+          <div id="d">
+            <button title="click to select answer" type="button" class="button">
+              <span id="dButton" class="dButton"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="mCont"></div>
+    </section>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
