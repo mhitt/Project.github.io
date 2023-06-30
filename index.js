@@ -1,47 +1,61 @@
-//set inititia var
-let q;
-let a;
-let b;
-let c;
-let d;
-let choice;
-let qNum = 1;
+const target = document.getElementById("target");
+const start = document.getElementById("start");
+const scoreElement = document.getElementById("score");
+const highScoreElement = document.getElementById("high-score");
+const gameContainer = document.getElementById("game-container");
 
+let score = 0;
+let highScore = localStorage.getItem("highScore") || 0;
 
-
-
-let startGame = document.querySelector(".startBtn");
-
-
-startGame.addEventListener("click", loadNewPage);
-
-function loadNewPage(){
-    window.location.href = "game.html";
+function updateScore() {
+  scoreElement.textContent = "Score: " + score;
+  highScoreElement.textContent = "High Score: " + highScore;
 }
 
+target.addEventListener("mouseover", function() {
+  score++;
+  if (score > highScore) {
+    highScore = score;
+    localStorage.setItem("highScore", highScore);
+  }
+  updateScore();
+  moveTarget();
+});
 
+start.addEventListener("mouseover", function() {
+  score = 0;
+  updateScore();
+  moveTarget();
+});
 
+function moveTarget() {
+  const containerWidth = gameContainer.offsetWidth;
+  const containerHeight = gameContainer.offsetHeight;
 
+  const targetWidth = target.offsetWidth;
+  const targetHeight = target.offsetHeight;
 
+  const startWidth = start.offsetWidth;
+  const startHeight = start.offsetHeight;
 
+  const maxPosX = containerWidth - targetWidth;
+  const maxPosY = containerHeight - targetHeight;
 
+  const randomX = Math.floor(Math.random() * maxPosX);
+  const randomY = Math.floor(Math.random() * maxPosY);
 
+  target.style.left = randomX + "px";
+  target.style.top = randomY + "px";
 
-// Event listeners
-// document.addEventListener("DOMContentLoaded", () => {
-//     const startButton = document.querySelector(".startBtn");
-//     startButton.addEventListener("click", startGame); // Corrected event listener setup
-  
-//     const answerButtons = document.querySelectorAll(".button");
-//     answerButtons.forEach((button) => {
-//       button.addEventListener("click", () => checkAnswer(button));
-//     });
-//   });
+  const maxStartPosX = containerWidth - startWidth;
+  const maxStartPosY = containerHeight - startHeight;
 
-// function addQuestion(q,a,b,c,d) {
-//     document.getElementById('question').innerHTML = q;
-//     document.getElementById('aButton').innerHTML = a;
-//     document.getElementById('bButton').innerHTML = b;
-//     document.getElementById('cButton').innerHTML = c;
-//     document.getElementById('dButton').innerHTML = d;
-// }
+  const randomStartX = Math.floor(Math.random() * maxStartPosX);
+  const randomStartY = Math.floor(Math.random() * maxStartPosY);
+
+  start.style.left = randomStartX + "px";
+  start.style.top = randomStartY + "px";
+}
+
+updateScore();
+moveTarget();

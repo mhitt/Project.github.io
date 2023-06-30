@@ -1,26 +1,55 @@
 body {
-  background-color: black;
-  color: white;
-}
-.button {
-  padding: 5px;
-  border-color: blue;
-  width: 40%;
-  height: 75px;
-  margin-left: 25px;
-  margin-right: 25px;
-  border-radius: 25px;
-}
-#qMainDiv {
-  border: solid white 1px;
-}
-#qNumDiv{
-    height: 75px;
-    width: 90%;
-}
-#startImage{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-}
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: black;
+  }
+  
+  h1 {
+    color: #ffffff;
+  }
+  
+  #game-container {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #target {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: rgb(7, 78, 5);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  #start {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #target:hover,
+  #start:hover {
+    background-color: #ff7f50;
+  }
+  
+  #score,
+  #high-score {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+  }
+  
